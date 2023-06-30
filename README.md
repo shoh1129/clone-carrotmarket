@@ -36,3 +36,10 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Just In Time Compiler
+tailwindcss 3.0부터 도입
+코드를 실시간으로 감시하면서 필요한 클래스를 생성하는 기능을 한다.
+class명을 생성하면 컴파일러가 그것을 찾아낸 다음 내가 원한느 클래스를 생성
+즉, tailwindcss를 사용한 코드만 컴파일러에서 가져와서 생성하여 사용함.
+(이전에는 모든 코드를 불러와야 했고, 배포할때 불필요한 코드들은 삭제해야하는 작업이 있었음)
