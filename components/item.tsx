@@ -1,11 +1,13 @@
+import { getImageURL } from "@lib/client/utils";
 import Link from "next/link";
 
 interface ItemProps {
   title: string;
   id: number;
   price: number;
-  comments: number;
+  comments?: number;
   hearts: number;
+  image?: string;
 }
 
 export default function Item({
@@ -14,12 +16,19 @@ export default function Item({
   comments,
   hearts,
   id,
+  image,
 }: ItemProps) {
   return (
-    <Link href={`/items/${id}`} legacyBehavior>
+    <Link href={`/products/${id}`} legacyBehavior>
       <a className="flex px-4 pt-5 cursor-pointer justify-between">
         <div className="flex space-x-4">
-          <div className="w-20 h-20 bg-gray-400 rounded-md" />
+          {
+            image ? (
+              <img src={getImageURL(image)} className="w-20 h-20 bg-gray-400 rounded-md" />
+            ) : (
+              <div className="w-20 h-20 bg-gray-400 rounded-md" />
+            )
+          }
           <div className="pt-2 flex flex-col">
             <h3 className="text-sm font-medium text-gray-900">{title}</h3>
             <span className="font-medium mt-1 text-gray-900">${price}</span>
@@ -43,7 +52,7 @@ export default function Item({
             </svg>
             <span>{hearts}</span>
           </div>
-          <div className="flex space-x-0.5 items-center text-sm  text-gray-600">
+          {/* <div className="flex space-x-0.5 items-center text-sm  text-gray-600">
             <svg
               className="w-4 h-4"
               fill="none"
@@ -59,7 +68,7 @@ export default function Item({
               ></path>
             </svg>
             <span>{comments}</span>
-          </div>
+          </div> */}
         </div>
       </a>
     </Link>

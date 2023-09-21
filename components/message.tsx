@@ -1,4 +1,4 @@
-import { cls } from "@/lib/utils";
+import { cls } from "@lib/client/utils";
 
 interface MessageProps {
   message: string;

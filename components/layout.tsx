@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { cls } from "@/lib/utils";
+import { cls } from "@lib/client/utils";
 
 interface LayoutProps {
   title?: string;
@@ -126,11 +126,11 @@ export default function Layout({
               <span>채팅</span>
             </a>
           </Link>
-          <Link href="/live" legacyBehavior>
+          <Link href="/streams" legacyBehavior>
             <a
               className={cls(
                 "flex flex-col items-center space-y-2 ",
-                router.pathname === "/live"
+                router.pathname === "/streams"
                   ? "text-orange-500"
                   : "hover:text-gray-500 transition-colors"
               )}
